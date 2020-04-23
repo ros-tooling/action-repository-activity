@@ -1,0 +1,16 @@
+name: 'GitHub Repository Activity Action'
+description: 'Query repository information and export them as output'
+author: 'ROS Tooling Working Group'
+branding:
+  icon: 'list'
+  color: 'green'
+input:
+  repository:
+    description: Repository name with owner. For example, ros-tooling/action-repository-activity
+    required: true
+  token:
+    description: Personal access token (PAT) used to query repository information
+    required: true
+runs:
+  using: 'node12'
+  main: 'dist/index.js'
