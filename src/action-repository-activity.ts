@@ -16,22 +16,27 @@ export async function run() {
       owner: owner,
       repo: repository,
     });
-    core.setOutput("allow_merge_commit", String(data.allow_merge_commit));
-    core.setOutput("allow_rebase_merge", String(data.allow_rebase_merge));
-    core.setOutput("allow_squash_merge", String(data.allow_squash_merge));
-    core.setOutput("archived", String(data.archived));
-    core.setOutput("disabled", String(data.disabled));
-    core.setOutput("forks_count", String(data.forks_count));
-    core.setOutput("has_downloads", String(data.has_downloads));
-    core.setOutput("has_issues", String(data.has_issues));
-    core.setOutput("has_pages", String(data.has_pages));
-    core.setOutput("has_projects", String(data.has_projects));
-    core.setOutput("has_wiki", String(data.has_wiki));
-    core.setOutput("network_count", String(data.network_count));
-    core.setOutput("open_issues_count", String(data.open_issues_count));
-    core.setOutput("stargazers_count", String(data.stargazers_count));
-    core.setOutput("subscribers_count", String(data.subscribers_count));
-    core.setOutput("watchers_count", String(data.watchers_count));
+    let requestedData = [
+      "allow_merge_commit",
+      "allow_rebase_merge",
+      "allow_squash_merge",
+      "archived",
+      "disabled",
+      "forks_count",
+      "has_downloads",
+      "has_issues",
+      "has_pages",
+      "has_projects",
+      "has_wiki",
+      "network_count",
+      "open_issues_count",
+      "stargazers_count",
+      "subscribers_count",
+      "watchers_count",
+    ];
+    requestedData.forEach((element) => {
+      core.setOutput(element, String(data[element]));
+    });
   } catch (error) {
     core.setFailed(error.message);
   }
