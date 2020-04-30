@@ -32,7 +32,7 @@
     "url": "https://github.com/ros-tooling/action-repository-activity/issues"
   },
   "dependencies": {
-    "@actions/core": "^1.2.3",
+    "@actions/core": "^1.2.4",
     "@actions/github": "^2.1.1",
     "@types/jest": "^25.2.1",
     "husky": "^4.2.5"
