@@ -34,7 +34,7 @@
   "dependencies": {
     "@actions/core": "^1.2.4",
     "@actions/github": "^2.2.0",
-    "@types/jest": "^26.0.3",
+    "@types/jest": "^26.0.4",
     "husky": "^4.2.5"
   },
   "devDependencies": {
