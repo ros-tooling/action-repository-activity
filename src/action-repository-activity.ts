@@ -10,7 +10,7 @@ export async function run() {
     const owner_and_repository_list = owner_and_repository.split("/");
     const owner = owner_and_repository_list[0];
     const repository = owner_and_repository_list[1];
-    const octokit = new github.GitHub(token);
+    const octokit = github.getOctokit(token);
     const { data: data } = await octokit.repos.get({
       owner: owner,
       repo: repository,
